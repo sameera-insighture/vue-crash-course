@@ -15,7 +15,6 @@ interface Post {
 const data = ref<Post[]>([])
 const loading = ref(false)
 
-// ✅ Make pagination reactive
 const pagination = ref({
   page: 1,
   pageSize: 10,

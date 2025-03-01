@@ -3,7 +3,6 @@ import { computed } from 'vue'
 import { NDataTable } from 'naive-ui'
 import type { TableColumns } from 'naive-ui/es/data-table/src/interface'
 
-// Define generic type T
 type DataTableProps<T> = {
   columns: TableColumns<T>
   data: T[]
@@ -25,7 +24,6 @@ const emit = defineEmits<{
   (event: 'update:sorter', sorter: { columnKey: string; order: 'ascend' | 'descend' | null }): void
 }>()
 
-// ✅ Computed pagination to make it reactive
 const computedPagination = computed(() => ({
   ...props.pagination,
   onChange: (page: number) => emit('update:page', page),
